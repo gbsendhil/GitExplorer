@@ -89,4 +89,8 @@ dependencies {
 
     //Timber Logging
     implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    //Mockk
+    testImplementation "io.mockk:mockk:1.9.2"
+    androidTestImplementation "io.mockk:mockk-android:1.9"
 }
