@@ -70,6 +70,10 @@ class GitRepoListFragment : DaggerFragment() , GitRepoListAdapter.Listener {
         }
     }
 
+    fun showMainFragmentContent(){
+        repo_items_recycler_view.visibility = View.VISIBLE
+    }
+
     companion object {
         private const val KEY_SAMPLE: String = "sample"
 

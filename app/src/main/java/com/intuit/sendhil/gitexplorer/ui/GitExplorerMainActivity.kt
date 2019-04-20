@@ -17,4 +17,20 @@ class GitExplorerMainActivity : AppCompatActivity() {
         transaction.replace(R.id.fragment_content, newCurrentFragment, "tag")
         transaction.commit()
     }
+
+    override fun onBackPressed() {
+        val fm = supportFragmentManager
+        for (frag in fm.fragments) {
+            if (frag.isVisible) {
+                val childFrag = frag as GitRepoListFragment
+                childFrag.showMainFragmentContent()
+                val childFm = frag.childFragmentManager
+                if (childFm.backStackEntryCount > 0) {
+                    childFm.popBackStack()
+                    return
+                }
+            }
+        }
+        super.onBackPressed()
+    }
 }
