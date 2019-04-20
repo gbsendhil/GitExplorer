@@ -57,7 +57,8 @@ class GitRepoListFragment : DaggerFragment() , GitRepoListAdapter.Listener {
     }
 
     override fun onItemClick(repo: Repos) {
-
+        repo_items_recycler_view.visibility = View.GONE
+        child_fragment_container.visibility = View.VISIBLE
     }
 
     companion object {
