@@ -1,9 +1,10 @@
-package com.intuit.sendhil.gitexplorer
+package com.intuit.sendhil.gitexplorer.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.intuit.sendhil.gitexplorer.R
 
-class MainActivity : AppCompatActivity() {
+class GitExplorerMainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

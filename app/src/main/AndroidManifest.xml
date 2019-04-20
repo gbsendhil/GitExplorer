@@ -10,7 +10,7 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:name=".GitExplorerApplication">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.GitExplorerMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
