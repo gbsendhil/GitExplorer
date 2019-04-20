@@ -5,11 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.ViewCompat
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.intuit.sendhil.gitexplorer.R
 import com.intuit.sendhil.gitexplorer.model.Repos
+import com.intuit.sendhil.gitexplorer.ui.detail.GitRepoDetailsFragment
 import com.intuit.sendhil.gitexplorer.viewmodel.list.GitRepoListFeatureViewModel
 import dagger.android.support.DaggerFragment
 import kotlinx.android.synthetic.main.list_fragment.*
@@ -59,6 +61,13 @@ class GitRepoListFragment : DaggerFragment() , GitRepoListAdapter.Listener {
     override fun onItemClick(repo: Repos) {
         repo_items_recycler_view.visibility = View.GONE
         child_fragment_container.visibility = View.VISIBLE
+        GitRepoDetailsFragment.buildFragment(repo).let {
+            childFragmentManager.beginTransaction()
+                .add(R.id.child_fragment_container,it,GitRepoDetailsFragment.FRAGMENT_TAG)
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                .addToBackStack("child")
+                .commit()
+        }
     }
 
     companion object {
