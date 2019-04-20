@@ -29,6 +29,15 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    kapt {
+        generateStubs = true
+    }
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+    }
+    androidExtensions {
+        experimental = true
+    }
 }
 
 dependencies {
