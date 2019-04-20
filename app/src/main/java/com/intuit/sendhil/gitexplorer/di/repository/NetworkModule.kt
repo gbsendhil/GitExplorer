@@ -1,4 +1,4 @@
-package com.intuit.sendhil.gitexplorer.di
+package com.intuit.sendhil.gitexplorer.di.repository
 
 import com.intuit.sendhil.gitexplorer.api.GitHubService
 import dagger.Module
